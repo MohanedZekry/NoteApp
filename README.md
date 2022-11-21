@@ -30,8 +30,6 @@ Of course, it comes at a cost:
 * **You need interesting business logic** to "justify" the structure. If all you do in your use case is a one-line method to read or save from a database, then maybe you can get away with something simpler
 
 ## Layers
-
-## Clean Architecture
  - Presentation Layer
  - Domain Layer
  - Data Layer
