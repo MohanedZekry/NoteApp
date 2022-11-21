@@ -1,5 +1,5 @@
 # Note App
-<img src="https://img.shields.io/badge/Flutter-%2302569B.svg?style=for-the-badge&logo=Flutter&logoColor=white">
+<center><img src="https://img.shields.io/badge/Flutter-%2302569B.svg?style=for-the-badge&logo=Flutter&logoColor=white"></center>
 This is an example project to show what Clean Architecture would look like (in Flutter) 
 
 
