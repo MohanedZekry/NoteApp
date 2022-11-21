@@ -1,7 +1,8 @@
 # Note App
 This is an example project to show what Clean Architecture would look like (in Flutter) 
 
-<img src="https://img.shields.io/badge/Note%20App-%2302569B.svg?style=for-the-badge&logo=Flutter&logoColor=white">
+<img src="https://img.shields.io/badge/Note%20App-%2302569B.svg?style=for-the-badge&logo=Flutter&logoColor=white"/>
+
 | Layers       | Progress   |
 | :---------   | :-------:  |
 | Data         |    ☑️     | 
