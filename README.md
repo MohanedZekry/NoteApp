@@ -2,6 +2,14 @@
 
 This is an example project to show what Clean Architecture would look like (in Flutter).
 
+## Layers
+ - Presentation Layer
+ - Domain Layer
+ - Data Layer
+<p align="center">
+<img src="images/2.png" style="display: block; margin-left: auto; margin-right: auto; width: 75%;"/>
+</p>
+
 ## Why Clean Architecture?
 Clean architecture helps us solve, or at least mitigate, these common problems with architecture:
 * **Decisions are taken too early**, often at the beginning of a project, when we know the least about the problem that we have to solve
@@ -27,9 +35,4 @@ Clean architecture gives us all these benefits:
 
 Of course, it comes at a cost:
 * **Perceived duplication of code**. Entities might be represented differently when used in business logic, when dealing with the database and when presenting them in a json format. You might feel like you're duplicating code, but you're actually favouring _decoupling over DRY_
-* **You need interesting business logic** to "justify" the structure. If all you do in your use case is a one-line method to read or save from a database, then maybe you can get away with something simpler
-
-## Layers
- - Presentation Layer
- - Domain Layer
- - Data Layer
+* **You need interesting business logic** to "justify" the structure. If all you do in your use case is a one-line method to read or save from a database, then maybe you can get away with something simpler.
