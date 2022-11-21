@@ -3,6 +3,12 @@
 
 This is an example project to show what Clean Architecture would look like (in Flutter) 
 
+| Layers       | Progress   |
+| :---------   | :-------:  |
+| Data         |    ☑️     | 
+| Domain       |    ✅     |
+| Presentation |    ☑️     |
+
 
 ## Layers
  - Presentation Layer
