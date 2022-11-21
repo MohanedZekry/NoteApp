@@ -7,7 +7,7 @@ This is an example project to show what Clean Architecture would look like (in F
  - Domain Layer
  - Data Layer
 <p align="center">
-<img src="images/2.png" style="display: block; margin-left: auto; margin-right: auto; width: 75%;"/>
+<img src="images/clean_arch.png" style="display: block; margin-left: auto; margin-right: auto; width: 75%;"/>
 </p>
 
 ## Why Clean Architecture?
