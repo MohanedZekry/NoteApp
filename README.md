@@ -5,7 +5,7 @@ This is an example project to show what Clean Architecture would look like (in F
 
 | Layers       | Progress   |
 | :---------   | :-------:  |
-| Data         |    ☑️     | 
+| Data         |    ✅     | 
 | Domain       |    ✅     |
 | Presentation |    ☑️     |
 
