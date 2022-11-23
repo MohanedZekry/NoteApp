@@ -8,7 +8,6 @@ import '../../models/note_model.dart';
 
 class NoteLocalDataSourceImpl implements NoteLocalDataSource {
 
-  NoteLocalDataSourceImpl();
   @override
   Future<Unit> cacheNote(List<NoteModel> noteModel) {
     SharedPreferencesHelper.setData(Constants.CACHED_NOTES,
@@ -21,7 +20,9 @@ class NoteLocalDataSourceImpl implements NoteLocalDataSource {
 
   @override
   Future<List<NoteModel>> getAllSavedNotes() {
+
     final jsonString = SharedPreferencesHelper.getData(key: Constants.CACHED_NOTES);
+
     if(jsonString != null){
       List decodeJson = json.decode(jsonString);
       List<NoteModel> list = decodeJson.map((e) => NoteModel.fromJson(e)).toList();
@@ -29,6 +30,7 @@ class NoteLocalDataSourceImpl implements NoteLocalDataSource {
     }else{
       throw NoDataException();
     }
+
   }
 
 }
