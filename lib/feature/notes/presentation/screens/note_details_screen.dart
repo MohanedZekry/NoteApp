@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:noteapp/core/widget/loading_widget.dart';
+import 'package:noteapp/core/widget/snackbar_widget.dart';
 import 'package:noteapp/feature/notes/domain/entities/note.dart';
 import 'package:noteapp/feature/notes/presentation/controller/note_details/note_details_bloc.dart';
 
@@ -31,20 +32,13 @@ class NoteDetailsScreen extends StatelessWidget {
           padding: const EdgeInsets.all(10.0),
           child: BlocConsumer<NoteDetailsBloc,NoteDetailsState>(
             listener: (context, state) {
-              if(state is ErrorNoteDetailsState){
-                ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                        backgroundColor: Colors.red,
-                        content: Text(
-                          state.message,
-                          style: GoogleFonts.cairo(
-                              color: Colors.white
-                          ),
-                        )
-                    ));
+              if(state is SuccessfulNoteDetailsState){
+                BuildSnackBar().showSnackBar(context: context, message: state.message, snackBarCases: SnackBarCases.SUCCESS);
                 Navigator.of(context).pushAndRemoveUntil(
                     RouteTransition(destination: const NoteScreen()),
                         (route) => false);
+              }else if(state is ErrorNoteDetailsState){
+                BuildSnackBar().showSnackBar(context: context, message: state.message, snackBarCases: SnackBarCases.ERROR);
               }
             },
             builder: (context, state) {
