@@ -13,6 +13,7 @@ part 'note_details_event.dart';
 part 'note_details_state.dart';
 
 class NoteDetailsBloc extends Bloc<NoteDetailsEvent, NoteDetailsState> {
+
   final AddNoteUseCase addNoteUseCase;
   final UpdateNoteUseCase updateNoteUseCase;
   final DeleteNoteUseCase deleteNoteUseCase;
@@ -52,7 +53,7 @@ class NoteDetailsBloc extends Bloc<NoteDetailsEvent, NoteDetailsState> {
       case OfflineFailure :
         return OFFLINE_FAILURE_MESSAGE;
       default :
-        return "Unexpected error, Please try again later.";
+        return UNEXPECTED_ERROR_MESSAGE;
     }
   }
 

@@ -9,13 +9,18 @@ class NoteRemoteDataSourceImpl implements NoteRemoteDataSource {
 
   @override
   Future<List<NoteModel>> getAllNotes() async {
-    final response = await DioHelper.getData(url: Constants.NOTE_EP);
-    if(response.statusCode == 200){
-      return List<NoteModel>.from(
-          (response.data as List).map((e) => NoteModel.fromJson(e))
-      );
-    }else{
-      throw ServerException();
+    try {
+      final response = await DioHelper.getData(url: Constants.NOTE_EP);
+      print(response.data);
+      if (response.statusCode == 200) {
+        return List<NoteModel>.from(
+            (response.data as List).map((e) => NoteModel.fromJson(e))
+        );
+      } else {
+        throw ServerException();
+      }
+    } catch(_){
+      throw SocketException();
     }
   }
 

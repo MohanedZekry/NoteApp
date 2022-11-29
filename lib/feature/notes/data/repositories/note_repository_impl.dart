@@ -25,6 +25,8 @@ class NoteRepositoryImpl implements NoteRepository {
         return right(result);
       } on ServerException {
         return Left(ServerFailure());
+      } on SocketException{
+        return Left(SocketFailure());
       }
     }else{
       try {

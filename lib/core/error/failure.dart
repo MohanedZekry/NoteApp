@@ -17,3 +17,7 @@ class NoDataFailure extends Failure {
   List<Object> get props => [];
 }
 
+class SocketFailure extends Failure {
+  @override
+  List<Object> get props => [];
+}

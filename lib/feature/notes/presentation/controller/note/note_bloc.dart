@@ -5,6 +5,7 @@ import 'package:meta/meta.dart';
 import 'package:noteapp/core/error/failure.dart';
 import 'package:noteapp/core/use_case/base_use_case.dart';
 import 'package:noteapp/core/utils/failures.dart';
+import '../../../../../core/utils/messages.dart';
 import '../../../domain/entities/note.dart';
 import '../../../domain/use_cases/get_all_notes_use_case.dart';
 part 'note_event.dart';
@@ -18,12 +19,10 @@ class NoteBloc extends Bloc<NoteEvent, NoteState> {
     on<NoteEvent>((event, emit) async {
       if(event is GetAllNotesEvent){
         emit(LoadingNotesState());
-
         final result = await getAllNotesUseCase.call(const DefaultParams());
         emit(_mapResponseToState(result));
       }else if(event is RefreshNotesEvent){
         emit(LoadingNotesState());
-
         final result = await getAllNotesUseCase.call(const DefaultParams());
         emit(_mapResponseToState(result));
       }
@@ -45,8 +44,10 @@ class NoteBloc extends Bloc<NoteEvent, NoteState> {
         return OFFLINE_FAILURE_MESSAGE;
       case NoDataFailure :
         return NO_DATA_FAILURE_MESSAGE;
+      case SocketFailure :
+        return SOCKET_FAILURE_MESSAGE;
       default :
-        return "Unexpected error, Please try again later.";
+        return UNEXPECTED_ERROR_MESSAGE;
     }
   }
 
