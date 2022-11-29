@@ -8,9 +8,7 @@ class LoadingWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SizedBox(
-      height: 169,
-      child: Center(
+    return const SizedBox(child: Center(
         child: SpinKitFadingCircle(
           size: 30,
           color: primaryColor,

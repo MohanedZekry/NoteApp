@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:noteapp/core/network/dio_helper.dart';
 import 'package:noteapp/feature/notes/presentation/controller/note/note_bloc.dart';
 import 'package:noteapp/feature/notes/presentation/controller/note_details/note_details_bloc.dart';
-import 'package:noteapp/feature/notes/presentation/screens/NoteScreen.dart';
+import 'package:noteapp/feature/notes/presentation/screens/note_screen.dart';
 
 import 'core/styles/app_theme.dart';
 import 'core/di/dependency_container.dart' as di;

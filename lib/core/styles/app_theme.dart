@@ -7,6 +7,7 @@ final appTheme = ThemeData(
     appBarTheme: const AppBarTheme(
       backgroundColor: primaryColor,
       centerTitle: true,
+      foregroundColor: Colors.black
     ),
     brightness: Brightness.light,
     primaryColor: primaryColor,
@@ -16,7 +17,7 @@ final appTheme = ThemeData(
     progressIndicatorTheme: const ProgressIndicatorThemeData(color: primaryColor),
     floatingActionButtonTheme: const FloatingActionButtonThemeData(
       backgroundColor: primaryColor,
-      foregroundColor: secondaryColor,
+      foregroundColor: Colors.black
     ),
     inputDecorationTheme: InputDecorationTheme(
         floatingLabelStyle: const TextStyle(color: primaryColor),
@@ -28,4 +29,6 @@ final appTheme = ThemeData(
         border: OutlineInputBorder(
           borderSide: const BorderSide(color: primaryColor),
           borderRadius: BorderRadius.circular(8),
-        )));
+        )
+    )
+);

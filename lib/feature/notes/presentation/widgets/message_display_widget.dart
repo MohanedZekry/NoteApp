@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:noteapp/core/icons/note_icon.dart';
+import 'package:noteapp/core/icons/note_icon_widget.dart';
 
 class MessageDisplayWidget extends StatelessWidget {
   final String message;
@@ -9,15 +11,20 @@ class MessageDisplayWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.height / 3,
       child: Center(
         child: SingleChildScrollView(
-          child: Text(
-            message,
-            style: GoogleFonts.cairo(
-              fontSize: 25,
-            ),
-            textAlign: TextAlign.center,
+          child: Column(
+            children: [
+              const NoteIconWidget(noteIcon: NoteIcon.error, width: 150, height: 150),
+              Text(
+                message,
+                style: GoogleFonts.alef(
+                  fontSize: 21,
+                  color: Colors.red[800]
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ],
           ),
         ),
       ),
