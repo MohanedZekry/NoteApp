@@ -30,7 +30,9 @@ class NoteScreen extends StatelessWidget {
           if(state is LoadingNotesState){
             return const LoadingWidget();
           }else if(state is LoadedNotesState){
-            return NoteListWidget(notes: state.notes);
+            return RefreshIndicator(
+                onRefresh: () => onRefresh(context),
+                child: NoteListWidget(notes: state.notes));
           }else if(state is ErrorNoteState){
             return MessageDisplayWidget(message: state.message);
           }

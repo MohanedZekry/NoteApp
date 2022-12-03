@@ -40,7 +40,7 @@ class NoteRepositoryImpl implements NoteRepository {
 
   @override
   Future<Either<Failure, Unit>> addNote(Note note) async {
-    final NoteModel noteModel = NoteModel(id: note.id, title: note.title, body: note.body);
+    final NoteModel noteModel = NoteModel(title: note.title, body: note.body);
     return await _responseCall(() => noteRemoteDataSource.addNote(noteModel));
   }
 

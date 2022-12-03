@@ -44,7 +44,9 @@ class NoteRemoteDataSourceImpl implements NoteRemoteDataSource {
 
   @override
   Future<Unit> updateNote(NoteModel noteModel) async {
+
     final body = {
+      'id' : noteModel.id,
       'title' : noteModel.title,
       'body' : noteModel.body
     };

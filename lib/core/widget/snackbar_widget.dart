@@ -12,7 +12,7 @@ class BuildSnackBar{
       case SnackBarCases.SUCCESS:
         ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
-                backgroundColor: Colors.red,
+                backgroundColor: Colors.green,
                 content: Text(
                   message,
                   style: GoogleFonts.cairo(
@@ -24,7 +24,7 @@ class BuildSnackBar{
       case SnackBarCases.ERROR:
         ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
-                backgroundColor: Colors.green,
+                backgroundColor: Colors.red,
                 content: Text(
                   message,
                   style: GoogleFonts.cairo(

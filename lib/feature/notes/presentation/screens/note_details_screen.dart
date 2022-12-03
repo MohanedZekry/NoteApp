@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:noteapp/core/widget/loading_widget.dart';
 import 'package:noteapp/core/widget/snackbar_widget.dart';
 import 'package:noteapp/feature/notes/domain/entities/note.dart';
 import 'package:noteapp/feature/notes/presentation/controller/note_details/note_details_bloc.dart';
-
+import 'package:noteapp/feature/notes/presentation/widgets/note_details_form_widget.dart';
 import '../../../../core/animation/route_transition.dart';
 import 'note_screen.dart';
 
@@ -45,7 +44,7 @@ class NoteDetailsScreen extends StatelessWidget {
               if(state is LoadingNoteDetailsState){
                 return const LoadingWidget();
               }else {
-                return Container();
+                return NoteDetailsFormWidget(isUpdate: isUpdate, note: isUpdate? note! : null,);
               }
             },
           ),
